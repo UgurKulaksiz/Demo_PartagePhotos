@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { FaceSnapModel } from '../models/face-snap-model';
 
 @Component({
   selector: 'app-face-snap', // Le nom de la balise HTML qui représentera ce composant
@@ -8,21 +9,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './face-snap.scss',
 })
 export class FaceSnap implements OnInit {
-  title!: string;
-  description!: string;
-  createdAt!: Date;
-  snaps!: number;
-  imageUrl!: string;
+  @Input() faceSnapModel!: FaceSnapModel; // Propriété d'entrée pour recevoir les données d'un FaceSnap
+
   snapButtonText!: string;
   userHasSnapped!: boolean;
 
   // Méthode appelée lors de l'initialisation du composant
   ngOnInit(): void {
-    this.title = "Archibald";
-    this.description = "Mon meilleur ami depuis toujours !";
-    this.createdAt = new Date();
-    this.snaps = 5;
-    this.imageUrl = "https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg";
     this.snapButtonText = "Oh Snap !";
     this.userHasSnapped = false;
   }
@@ -36,13 +29,13 @@ export class FaceSnap implements OnInit {
   }
 
   unSnap() {
-    this.snaps--;
+    this.faceSnapModel.removeSnap();
     this.snapButtonText = "Oh Snap !";
     this.userHasSnapped = false;
   }
 
   snap() {
-    this.snaps++;
+    this.faceSnapModel.addSnap();
     this.snapButtonText = "Oops, unSnap !";
     this.userHasSnapped = true;
   }
