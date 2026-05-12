@@ -27,20 +27,20 @@ export class App implements OnInit {
         new Date(),
         10
       ),
-      // new FaceSnapModel(
-      //   "Three Rock Mountain",
-      //   "Un endroit magnifique pour les randonnées !",
-      //   "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Three_Rock_Mountain_Southern_Tor.jpg/960px-Three_Rock_Mountain_Southern_Tor.jpg",
-      //   new Date(),
-      //   6
-      // ),
-      // new FaceSnapModel(
-      //   "Un bon repas",
-      //   "Mmmh que c'était bon !",
-      //   "https://wtop.com/wp-content/uploads/2020/06/HEALTHYFRESH.jpg",
-      //   new Date(),
-      //   156
-      // )
+      new FaceSnapModel(
+        "Three Rock Mountain",
+        "Un endroit magnifique pour les randonnées !",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Three_Rock_Mountain_Southern_Tor.jpg/960px-Three_Rock_Mountain_Southern_Tor.jpg",
+        new Date(),
+        6
+      ),
+      new FaceSnapModel(
+        "Un bon repas",
+        "Mmmh que c'était bon !",
+        "https://wtop.com/wp-content/uploads/2020/06/HEALTHYFRESH.jpg",
+        new Date(),
+        156
+      )
     ];
 
     this.faceSnaps[0].setLocation("à la montagne");
