@@ -40,5 +40,7 @@ export class App implements OnInit {
       new Date(),
       156
     );
+
+    this.myOtherSnap.setLocation("à la montagne");
   }
 }
