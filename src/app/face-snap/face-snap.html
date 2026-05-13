@@ -1,5 +1,4 @@
 <div class="face-snap-card" [ngClass]="{ snapped: userHasSnapped } ">
-    <h1>{{ myPrice | currency: 'EUR' : 'code' : '1.0-0' }}</h1>
     <h2>{{ faceSnapModel.title | uppercase }}</h2>
     @if (faceSnapModel.location) {
         <p>Localisation : {{ faceSnapModel.location }}</p>

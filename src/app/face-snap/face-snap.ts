@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FaceSnapModel } from '../models/face-snap-model';
-import { CurrencyPipe, DatePipe, DecimalPipe, LowerCasePipe, NgClass, NgStyle, PercentPipe, TitleCasePipe, UpperCasePipe } from "@angular/common";
+import { DatePipe, NgClass, NgStyle, UpperCasePipe } from "@angular/common";
 
 @Component({
   selector: 'app-face-snap', // Le nom de la balise HTML qui représentera ce composant
@@ -9,8 +9,7 @@ import { CurrencyPipe, DatePipe, DecimalPipe, LowerCasePipe, NgClass, NgStyle, P
     NgStyle, 
     NgClass,
     UpperCasePipe,
-    DatePipe,
-    CurrencyPipe
+    DatePipe
   ],
   templateUrl: './face-snap.html',
   styleUrl: './face-snap.scss',
@@ -20,7 +19,6 @@ export class FaceSnap implements OnInit {
 
   snapButtonText!: string;
   userHasSnapped!: boolean;
-  myPrice: number = 336.75;
 
   // Méthode appelée lors de l'initialisation du composant
   ngOnInit(): void {
