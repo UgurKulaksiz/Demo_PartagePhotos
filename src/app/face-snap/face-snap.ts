@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FaceSnapModel } from '../models/face-snap-model';
 import { DatePipe, NgClass, NgStyle, UpperCasePipe } from "@angular/common";
+import { FaceSnapsService } from '../services/face-snaps.service';
 
 @Component({
   selector: 'app-face-snap', // Le nom de la balise HTML qui représentera ce composant
@@ -19,6 +20,8 @@ export class FaceSnap implements OnInit {
 
   snapButtonText!: string;
   userHasSnapped!: boolean;
+
+  constructor(private faceSnapsService: FaceSnapsService){}
 
   // Méthode appelée lors de l'initialisation du composant
   ngOnInit(): void {
@@ -41,7 +44,7 @@ export class FaceSnap implements OnInit {
   }
 
   snap() {
-    this.faceSnapModel.addSnap();
+    this.faceSnapsService.snapFaceSnapById(this.faceSnapModel.id);
     this.snapButtonText = "Oops, unSnap !";
     this.userHasSnapped = true;
   }
